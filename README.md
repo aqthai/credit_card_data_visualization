@@ -1,7 +1,7 @@
-# cc_capstone
-Data engineering project that extracts data from a json api and files to visualize correlations.
+# Credit Card Visualization
+Here's how I would extract, transform, and load data from a json api and multiple files to visualize correlations.
 ![Dataflow](dataflow.PNG)
-Loan application and credit card datasets undergo ETL using Python, MariaDB, Apache Spark, and Python Visualization libraries.
+A thousand rows of loan application and credit card data were processed using Python, MariaDB, Apache Spark, and Python Visualization libraries.
 To run the virtual environment, open the terminal, go to this directory and activate the virtual environment with
 `Scripts\activate`
 Download dependencies with 
@@ -11,4 +11,4 @@ Run jupyter-lab with
 When finished, close the virtual environment with
 `deactivate` or `Scripts\deactivate`
 
-This dataset has about a thousand randomly generated SSNs, so this rules out using a bar graph.  The lines representing each SSN were so small.  Instead, I've used scatter plots.  Hovering over a point will provide information.  Also, I made a barplot for each demographic upon application approval, because each had unique dependent variables.  If these had unanimous x-values, then a multi-bar plot would have been easy to make.  For example, options for dependents vary from 0, 1, 2, or 3+ in text format, but options for Married were Yes or No.  On the feature branch, I investigate the pd.get_dummies(<dataframe>) method for logistic regression and use plotly to show data when hovering the chart.  Another problem is that the dashboard does not show figures unless they are made with plotly.  I had trouble showing seaborn and matplotlib graphs.
+This dataset has about a thousand randomly generated SSNs, so I've used scatter plots to visualize spendings.  Hovering over a point will provide more information on each transaction.  To see how demographics correlate with credit card approval, a countplot was used for each demographic.  I used the pd.get_dummies(<dataframe>) method to change Yes and No values into 0 and 1's to try machine learning models and logistic regression worked best.  The dashboard was made with dashboard core components (dcc).  This does not show figures unless they are made with plotly, so seaborn and matplotlib graphs appear only on the index.ipynb file.
